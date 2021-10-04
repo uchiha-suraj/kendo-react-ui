@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import CardUi from './CardUi';
+import Table from './Table';
+import TableOptions from './TableOptions';
+import Sidebar from './Sidebar';
+import Navbar from './Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Navbar />
+      <div className = 'app__body'>   
+        <Sidebar />     
+        <div className="top__part">
+          <CardUi />
+          <TableOptions />
+        </div>
+      </div>  
+      <div className="table">
+        <Table />
+      </div>          
     </div>
   );
 }
