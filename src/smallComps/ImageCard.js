@@ -13,6 +13,15 @@ import SmallImageCard from './SmallImageCard';
 import CardButton from './CardButton';
 
 function ImageCard({ img, text, icon }) {
+  
+  const uploadIcon = () => {
+    return (
+      <td>
+        <img src = {icon} alt = 'icon' style = {{ height: '18px' }} />
+      </td>
+    )
+  }
+
   return (  
     <Card style = {{
       borderRadius: '10px',
@@ -28,7 +37,6 @@ function ImageCard({ img, text, icon }) {
             style = {{
               display: 'flex',
               flexDirection: 'row',
-              marginLeft: 'auto',
               boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
               borderRadius: '5px',
             }}
@@ -39,19 +47,19 @@ function ImageCard({ img, text, icon }) {
                 textAlign: 'center',
                 marginTop: '15px',
                 marginLeft: '5px',
-                fontSize: '14px'
+                fontSize: '12px'
               }}
             >
               {text}
             </div>
             <div
               style = {{
-                margin: '5px',    
-                marginRight: '10px',
-                height: '20px'     
+                margin: '8px',    
+                // marginLeft: 'auto',
+                marginLeft: '30px'
               }}
             >
-              <img src = {icon} alt = 'pic' />
+              <CardImage src = {icon} style = {{ width: '20px'}} />
             </div>         
           </div>
         </CardHeader>
@@ -94,7 +102,7 @@ function ImageCard({ img, text, icon }) {
                   marginLeft: '120px',
                 }}
               >
-                <CardImage src = {icon} />
+                <CardImage src = {icon} style = {{ width: '30px' }}/>
               </div>
               <h3 style = {{textAlign: 'center', marginTop: '30px'}}>Drag a file here</h3>
             </Card>
@@ -104,7 +112,7 @@ function ImageCard({ img, text, icon }) {
             <CardActions>
               <Button 
                 togglable={true}
-                style = {{backgroundColor: 'lightgreen', borderRadius: '5px', height: '30px', width: '350px'}} 
+                style = {{backgroundColor: 'lightgreen', borderRadius: '5px', height: '30px', width: '350px', marginTop: '10px', marginBottom: '-5px'}} 
               >
                 Button
               </Button>

@@ -7,21 +7,8 @@ import financials from './assets/Sidebar/finance.svg';
 import pos from './assets/Sidebar/cart.svg';
 import administration from './assets/Sidebar/account-tie.svg';
 
-const style = {
-  display: 'flex',
-  flexDirection: 'row',
-  marginLeft: '25px',
-  borderBottom: '1px solid gray',
-}
-
-const h2 = {
-  marginLeft: '15px',
-  fontWeight: 'normal',
-  fontSize: '17px'
-}
-
-const greenActive = {
-  backgroundColor: 'lightgreen'
+const click = {
+  backgroundColor: 'green'
 }
 
 const Sidebar = () => {
@@ -36,12 +23,12 @@ const Sidebar = () => {
         style = {{
           paddingRight: '20px',
           height: '730px',
-          width: '270px'
+          width: '270px',
         }}
         onSelect={handleSelect}
       >
 
-      {/* <PanelBarItem imageUrl = {dashboard} title="Dashboard" className = "panelbar__item" />
+      <PanelBarItem imageUrl = {dashboard} title="Dashboard" onClick = {click} />
       <PanelBarItem imageUrl = {rental} title="Rental" />
       <PanelBarItem imageUrl = {clients} title="Clients" />
       <PanelBarItem imageUrl = {dashboard} title="Inventory" />
@@ -49,75 +36,39 @@ const Sidebar = () => {
       <PanelBarItem imageUrl = {financials} title="Financial" />
       <PanelBarItem imageUrl = {financials} title="Calender" />
       <PanelBarItem imageUrl = {pos} title="POS" />
-      <PanelBarItem imageUrl = {administration} title="Administration" /> */}
-      
-        <div style = {style}>
-          <img src={dashboard} alt="dashboard" />
-          <span>
-            <h2 style = {h2}>Dashboard</h2>
-          </span>
-        </div>
-
-        <div style = {style}>
-          <img src={rental} alt="rental" />
-          <span>
-            <h2 style = {h2}>Rental</h2>
-          </span>
-        </div>
-
-        <div style = {style}>
-          <img src={clients} alt="clients" />
-          <span>
-            <h2 style = {h2}>Clients</h2>
-          </span>
-        </div>
-
-        <div style = {greenActive}>
-          <div style = {style}>
-            <img src={dashboard} alt="dashboard" />
-            <span>
-              <h2 style = {h2}>Inventory</h2>
-            </span>
-          </div>
-        </div>
-
-        <div style = {style}>
-          <img src={freight} alt="freight" />
-          <span>
-            <h2 style = {h2}>Freight</h2>
-          </span>
-        </div>
-
-        <div style = {style}>
-          <img src={financials} alt="financials" />
-          <span>
-            <h2 style = {h2}>Financial</h2>
-          </span>
-        </div>
-
-        <div style = {style}>
-          <img src={financials} alt="financials" />
-          <span>
-            <h2 style = {h2}>Calender</h2>
-          </span>
-        </div>
-
-        <div style = {style}>
-          <img src={pos} alt="pos" />
-          <span>
-            <h2 style = {h2}>POS</h2>
-          </span>
-        </div>
-
-        <div style = {style}>
-          <img src={administration} alt="administration" />
-          <span>
-            <h2 style = {h2}>Administration</h2>
-          </span>
-        </div>    
+      <PanelBarItem imageUrl = {administration} title="Administration" /> 
+           
       </PanelBar>
+      <style>
+         {
+           `
+           .k-panelbar > .k-item {
+             width: 270px;
+             height: 41px;
+             margin-left: -2px;
+           }
+           .k-panelbar > .k-item > .k-link {
+             color: black;
+             font-size: 15px;
+             font-weight: normal;
+             cursor: pointer;
+           }
+           .k-panelbar > .k-item > .k-link:hover {
+              background-color: lightGreen;
+            }
+           #panelbar.k-panelbar > .k-item > .k-link.k-state-selected      {
+              background-color : lightGreen;
+            }
+            .k-panelbar > .k-item > .k-link.k-state-selected:hover {
+              background-color : lightGreen;
+            }
+           `
+         }
+       </style>
     </div>
   )
 }
 
 export default Sidebar
+
+

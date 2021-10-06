@@ -72,10 +72,10 @@ const TableOptions = () => {
               height: 20px;
             }
             li {
-              margin-right: 50px;
-              margin-left: 50px;
-              font-weight: normal;
-              font-size: 8.5px;
+              margin-right: 40px;
+              margin-left: 40px;
+              font-weight: bold;
+              font-size: 9px;
             }
             li:hover {
                 cursor: pointer;
@@ -111,7 +111,7 @@ const TableOptions = () => {
         <CardActions>
           <Button 
             togglable={true}
-            style = {{backgroundColor: 'lightgreen', borderRadius: '5px', height: '40px', width: '350px'}} 
+            style = {{backgroundColor: 'lightgreen', borderRadius: '5px', height: '30px', width: '200px', marginBottom: '10px'}} 
           >
             Add New Asset
           </Button>
